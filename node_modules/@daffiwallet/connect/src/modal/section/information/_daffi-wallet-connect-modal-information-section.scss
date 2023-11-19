@@ -1,0 +1,147 @@
+@import "../../../ui/styles/media-queries";
+
+.daffi-wallet-connect-modal-information-section {
+  padding-left: 28px;
+  height: 100%;
+  text-align: center;
+  padding-top: 25%;
+
+  &--mobile {
+    padding: 0;
+
+    .daffi-wallet-connect-modal-information-section__daffi-icon {
+      margin-bottom: 16px;
+    }
+
+    .daffi-wallet-connect-modal-information-section__connect-daffi-title {
+      margin-bottom: 8px;
+
+      color: #ffffff;
+
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+      letter-spacing: -0.2px;
+    }
+
+    .daffi-wallet-connect-modal-information-section__title {
+      margin-bottom: 24px;
+
+      color: #ffffff;
+
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: -0.09px;
+      font-weight: 400;
+    }
+
+    .daffi-wallet-connect-modal-information-section__features-item__icon-wrapper {
+      background-color: #f2f3f8;
+    }
+
+    .daffi-wallet-connect-modal-information-section__features-item__description {
+      color: #ffffff;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--daffi-wallet-modal-font-family);
+
+    // Although this is not a standard, Design team suggest that we use it so supported browsers will use it
+    // stylelint-disable-next-line property-no-unknown
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.daffi-wallet-connect-modal-information-section__daffi-icon {
+  margin-bottom: 12px;
+  height: 100px;
+  width: 100px;
+}
+
+.daffi-wallet-connect-modal-information-section__title {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 3.5px;
+  margin-bottom: 30px;
+}
+
+.daffi-wallet-connect-modal-information-section__secondary-title {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 18px;
+  letter-spacing: 0.06px;
+
+  text-transform: uppercase;
+}
+
+.daffi-wallet-connect-modal-information-section__features-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 36px auto;
+  gap: 16px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 24px;
+  }
+}
+
+.daffi-wallet-connect-modal-information-section__features-item__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  background-color: #ffffff;
+
+  border-radius: 50%;
+}
+
+.daffi-wallet-connect-modal-information-section__features-item__description {
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.01px;
+}
+
+@include for-small-screens {
+  .daffi-wallet-connect-modal-information-section--desktop {
+    padding: 0;
+
+    .daffi-wallet-connect-modal-information-section__daffi-icon {
+      margin-bottom: 12px;
+    }
+
+    .daffi-wallet-connect-modal-information-section__title {
+      margin-bottom: 24px;
+
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.26px;
+    }
+
+    .daffi-wallet-connect-modal-information-section__features-item {
+      display: none;
+    }
+  }
+
+  .daffi-wallet-connect-modal-information-section__secondary-title {
+    display: none;
+  }
+}

@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "../ui/styles/media-queries";
+
+.daffi-wallet-modal {
+  --daffi-wallet-modal-font-family: "Inter", sans-serif;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999999;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #4c4c4cdf;
+
+  &--select-account {
+    .daffi-wallet-modal__body {
+      width: 480px;
+      height: 578px;
+
+      background-color: #ffffff;
+    }
+  }
+
+  &--mobile {
+    .daffi-wallet-modal__body {
+      top: 40px;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      max-width: unset;
+      height: calc(calc(100 * var(--vh)));
+
+      padding: 20px;
+
+      background-color: #131313;
+
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+
+      border-radius: 20px 20px 0px 0px;
+
+      animation: 0.3s DaffiWalletConnectMobileSlideIn ease-out;
+
+      overflow-y: auto;
+
+      transform: unset;
+
+      &::before {
+        background-image: unset;
+      }
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--daffi-wallet-modal-font-family);
+
+    // Although this is not a standard, Design team suggest that we use it so supported browsers will use it
+    // stylelint-disable-next-line property-no-unknown
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ul,
+  ol,
+  li {
+    list-style-type: none;
+  }
+}
+
+.daffi-wallet-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  height: 48px;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+  outline: none;
+
+  cursor: pointer;
+
+  font-family: var(--daffi-wallet-modal-font-family);
+  font-size: 14px;
+}
+
+.daffi-wallet-modal__logo img {
+  display: block;
+
+  width: 32px;
+}
+
+.daffi-wallet-modal__body {
+  position: relative;
+  top: 50%;
+  left: 50%;
+
+  width: 700px;
+  max-width: calc(100vw - 80px);
+
+  padding: 28px;
+
+  background-color: #131313;
+
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.08);
+
+  border-radius: 24px;
+
+  animation: 0.3s DaffiWalletConnectSlideIn ease-out;
+
+  transform: translate(-50%, -50%);
+}
+
+@include for-small-screens {
+  .daffi-wallet-modal--desktop {
+    .daffi-wallet-modal__body {
+      width: 100%;
+      max-width: calc(100vw - 32px);
+
+      padding: 24px;
+    }
+  }
+}
+
+@keyframes DaffiWalletConnectSlideIn {
+  0% {
+    opacity: 0;
+
+    transform: translate(-50%, calc(-50% + 24px));
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes DaffiWalletConnectMobileSlideIn {
+  0% {
+    top: 30%;
+
+    opacity: 0;
+  }
+
+  100% {
+    top: 40px;
+
+    opacity: 1;
+  }
+}

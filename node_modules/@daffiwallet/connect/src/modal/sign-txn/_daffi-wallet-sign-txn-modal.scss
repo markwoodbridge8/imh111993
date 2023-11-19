@@ -1,0 +1,29 @@
+@import "../daffi-wallet-modal";
+
+.daffi-wallet-sign-txn-modal.daffi-wallet-modal {
+  .daffi-wallet-modal__body {
+    width: 480px;
+    height: 578px;
+
+    background-color: #ffffff;
+    background-image: unset;
+
+    padding: 0;
+
+    .daffi-wallet-sign-txn-modal__body__content {
+      width: 100%;
+      height: 100%;
+    }
+
+    #daffi-wallet-iframe {
+      width: 100%;
+      height: 100%;
+
+      border-radius: 16px;
+
+      margin: 0 auto;
+
+      border: none;
+    }
+  }
+}
